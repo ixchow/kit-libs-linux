@@ -1,4 +1,4 @@
-# kit-libs-osx
+# kit-libs-linux
 
 Statically-build libraries for games (Linux version).
 
@@ -14,7 +14,7 @@ All built using `build.py`.
 Clone this directory as a subdirectory of whatever you are building.
 Then add compiler/linker arguments as follows:
 ```
-KIT_LIBS = kit-libs-osx
+KIT_LIBS = kit-libs-linux
 
 #for zlib:
 C++FLAGS += -I$(KIT_LIBS)/zlib/include
@@ -47,7 +47,7 @@ For SDL you can modify the `PATH` environment variable in your back-quoted confi
 
 Alternatively, you can use shell tests on all options:
 ```
-`if [ -d kit-libs-osx ]; then echo '-Ikit-libs-osx/...'; else echo '-I/usr/local/...'; fi`
+`if [ -d $(KIT_LIBS) ]; then echo '-Ikit-libs-linux/...'; else echo '-I/usr/local/...'; fi`
 ```
 
 This can avoid some warnings about non-existent paths from the linker.
