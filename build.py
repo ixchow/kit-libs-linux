@@ -167,9 +167,6 @@ def build_sdl():
 	with open(sdl_out + "/bin/sdl2-config", 'w') as f:
 		f.write("".join(out))
 
-build_sdl()
-assert(False)
-
 build_glm()
 build_zlib()
 build_libpng()
