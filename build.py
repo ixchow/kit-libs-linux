@@ -29,8 +29,8 @@ def build_zlib():
 
 
 def build_libpng():
-	png_file = 'libpng-1.6.32.tar.gz'
-	png_dir = 'libpng-1.6.32'
+	png_file = 'libpng-1.6.34.tar.gz'
+	png_dir = 'libpng-1.6.34'
 	png_out = 'libpng'
 
 	print("Deleting libpng...")
@@ -110,8 +110,8 @@ def build_glm():
 
 
 def build_sdl():
-	sdl_file = 'SDL2-2.0.5.tar.gz'
-	sdl_dir = 'SDL2-2.0.5'
+	sdl_file = 'SDL2-2.0.7.tar.gz'
+	sdl_dir = 'SDL2-2.0.7'
 	sdl_out = 'SDL2'
 
 	print("Deleting SDL...")
@@ -137,6 +137,7 @@ def build_sdl():
 		'--enable-video-x11',
 		'--disable-video-cocoa',
 		'--disable-video-directfb',
+		'--disable-video-vulkan',
 		'--disable-video-dummy',
 		'--enable-video-opengl',
 		'--enable-video-opengles',

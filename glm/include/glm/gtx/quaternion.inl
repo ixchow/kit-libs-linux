@@ -184,8 +184,10 @@ namespace glm
 		T cosTheta = dot(orig, dest);
 		vec<3, T, Q> rotationAxis;
 
-		if(cosTheta >= static_cast<T>(1) - epsilon<T>())
-			return quat();
+		if(cosTheta >= static_cast<T>(1) - epsilon<T>()) {
+			// orig and dest point in the same direction
+			return quat_identity<T,Q>();
+		}
 
 		if(cosTheta < static_cast<T>(-1) + epsilon<T>())
 		{
@@ -230,7 +232,7 @@ namespace glm
 	{
 		mat<3, 3, T, Q> Result;
 
-		Result[2] = -normalize(direction);
+		Result[2] = -direction;
 		Result[0] = normalize(cross(up, Result[2]));
 		Result[1] = cross(Result[2], Result[0]);
 
@@ -242,7 +244,7 @@ namespace glm
 	{
 		mat<3, 3, T, Q> Result;
 
-		Result[2] = normalize(direction);
+		Result[2] = direction;
 		Result[0] = normalize(cross(up, Result[2]));
 		Result[1] = cross(Result[2], Result[0]);
 

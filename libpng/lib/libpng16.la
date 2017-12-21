@@ -23,8 +23,8 @@ dependency_libs=' -L../zlib/lib -lz -lm'
 weak_library_names=''
 
 # Version information for libpng16.
-current=48
-age=32
+current=50
+age=34
 revision=0
 
 # Is this an already installed library?
@@ -38,4 +38,4 @@ dlopen=''
 dlpreopen=''
 
 # Directory that this library needs to be installed in:
-libdir='/afs/andrew.cmu.edu/usr21/jmccann/15-466-f17-base1/kit-libs-linux/libpng/lib'
+libdir='/home/ix/kit-libs-linux/libpng/lib'
